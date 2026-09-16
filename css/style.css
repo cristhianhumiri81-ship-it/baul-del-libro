@@ -1,0 +1,268 @@
+/* ==========================================================================
+   DESAFÍO PRÁCTICO: MAQUETACIÓN FLUIDA SIN FLEXBOX, GRID NI MEDIA QUERIES
+   LIBRERÍA EL BAÚL DEL LIBRO — PALETA: VERDE Y NEGRO
+   ========================================================================== */
+
+/* Reset Básico y Modelo de Caja Estricto */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Tipografía Escalar Fluida y Paleta Verde / Negro */
+body {
+    background-color: #f2f5f2; /* Fondo verde grisáceo muy claro */
+    color: #111111; /* Texto principal en negro casi puro */
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.7;
+    /* Tamaño tipográfico fluido usando clamp(Mínimo, Preferido en VW, Máximo) */
+    font-size: clamp(0.95rem, 0.85rem + 0.5vw, 1.25rem);
+}
+
+/* ==========================================================================
+   ENCABEZADO (HEADER) — NEGRO CON DETALLES VERDES
+   ========================================================================== */
+header {
+    background-color: #0d0d0d; /* Negro profundo */
+    color: #f2f5f2;
+    padding: clamp(1.5rem, 4vw, 3.5rem) 5%;
+    text-align: center;
+    border-bottom: 0.35rem solid #1b5e20; /* Verde brillante/bosque */
+}
+
+header h1 {
+    font-size: clamp(1.5rem, 1rem + 2vw, 2.8rem);
+    line-height: 1.2;
+    margin: 0.5rem 0;
+    color: #ffffff;
+}
+
+header p {
+    color: #81c784; /* Verde claro suave */
+}
+
+time {
+    display: block;
+    font-size: 0.85em;
+    margin-top: 0.5rem;
+    color: #a5d6a7;
+    font-style: italic;
+}
+
+/* ==========================================================================
+   NAVEGACIÓN (NAV) — NEGRO Y VERDE
+   ========================================================================== */
+nav {
+    background-color: #1a1a1a; /* Negro suave / Carbón */
+    text-align: center;
+    padding: 0.8rem 2%;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0.25rem 0.4rem;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9em;
+    padding: 0.4rem 0.7rem;
+    display: inline-block;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    background-color: #2e7d32; /* Verde intermedio */
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   CONTENEDOR PRINCIPAL Y SECCIONES
+   ========================================================================== */
+main {
+    /* Ancho fluido utilizando min() y calc() sin Media Queries */
+    width: min(92%, 72ch);
+    margin: clamp(1.5rem, 3vw, 3rem) auto;
+}
+
+section {
+    background-color: #ffffff;
+    border: 1px solid #c8d6c9;
+    border-left: 0.4rem solid #1b5e20; /* Borde izquierdo verde */
+    padding: clamp(1rem, 3vw, 2.5rem);
+    margin-bottom: clamp(1.2rem, 2.5vw, 2.2rem);
+    border-radius: 4px;
+}
+
+h2 {
+    color: #0d0d0d; /* Negro */
+    font-size: clamp(1.2rem, 1rem + 1vw, 1.8rem);
+    margin-bottom: 0.8rem;
+    border-bottom: 2px solid #a5d6a7; /* Línea divisoria verde claro */
+    padding-bottom: 0.3rem;
+}
+
+h3 {
+    color: #1b5e20; /* Verde oscuro */
+    margin-top: 1rem;
+    margin-bottom: 0.4rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+mark {
+    background-color: #c8e6c9; /* Verde resaltador suave */
+    color: #0d0d0d;
+    padding: 0.1em 0.3em;
+    font-weight: bold;
+}
+
+abbr {
+    text-decoration: underline dotted;
+    cursor: help;
+}
+
+blockquote {
+    background-color: #e8f5e9; /* Fondo verde muy claro */
+    border-left: 4px solid #2e7d32;
+    padding: 1rem;
+    margin: 1.2rem 0;
+    font-style: italic;
+    color: #003300;
+}
+
+ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+li {
+    margin-bottom: 0.4rem;
+}
+
+/* ==========================================================================
+   INTERACTIVIDAD NATIVA CON DETAILS Y SUMMARY
+   ========================================================================== */
+details {
+    background-color: #f1f8e9;
+    border: 1px solid #c8d6c9;
+    padding: 0.8rem 1.2rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+
+summary {
+    font-weight: bold;
+    color: #1b5e20;
+    cursor: pointer;
+}
+
+summary:hover {
+    color: #0d0d0d;
+}
+
+details[open] {
+    background-color: #ffffff;
+    border-color: #1b5e20;
+}
+
+details[open] summary {
+    margin-bottom: 0.8rem;
+    border-bottom: 1px dashed #1b5e20;
+    padding-bottom: 0.4rem;
+}
+
+dl {
+    margin-top: 0.5rem;
+}
+
+dt {
+    color: #1b5e20;
+    margin-top: 0.6rem;
+}
+
+dd {
+    margin-left: 1rem;
+    font-size: 0.95em;
+}
+
+/* ==========================================================================
+   MULTIMEDIA Y GALERÍA FLUIDA TRADICIONAL
+   ========================================================================== */
+figure {
+    margin: 1.2rem 0;
+    text-align: center;
+}
+
+iframe {
+    width: 100%;
+    height: clamp(220px, 40vw, 420px);
+    border: 0;
+    border-radius: 4px;
+}
+
+figcaption {
+    font-size: 0.85em;
+    color: #2e7d32;
+    margin-top: 0.4rem;
+    font-style: italic;
+}
+
+/* Galería Adaptable con Display Inline-Block */
+#galeria figure {
+    display: inline-block;
+    vertical-align: top;
+    width: clamp(240px, 30%, 100%);
+    margin: 1%;
+    background-color: #f1f8e9;
+    border: 1px solid #c8d6c9;
+    padding: 0.5rem;
+}
+
+/* Control estricto del modelo de caja para imágenes */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+/* ==========================================================================
+   BIBLIOGRAFÍA Y ENLACES
+   ========================================================================== */
+#contacto a {
+    color: #1b5e20;
+    font-weight: bold;
+    word-break: break-all;
+}
+
+#contacto a:hover {
+    color: #2e7d32;
+}
+
+/* ==========================================================================
+   PIE DE PÁGINA (FOOTER)
+   ========================================================================== */
+footer {
+    background-color: #0d0d0d; /* Negro profundo */
+    color: #a5d6a7; /* Texto en verde claro */
+    text-align: center;
+    padding: 1.8rem 1rem;
+    margin-top: 2rem;
+}
+
+footer small {
+    font-size: 0.85em;
+}
